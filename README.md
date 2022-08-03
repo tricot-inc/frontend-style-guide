@@ -21,6 +21,7 @@
 1. [Naming Conventions](#naming-conventions)
 1. [Standard Library](#standard-library)
 1. [React](#react)
+1. [TypeScript](#typescript)
 
 ## References
 
@@ -899,4 +900,36 @@ const fooComponent: React.FC<Props> = () => {};
 
 // good
 const FooComponent: React.FC<Props> = () => {};
+```
+
+## TypeScript
+
+- [18.1](#18-1) type alias ではなく interface を使用しましょう。
+
+```ts
+// bad
+type Foo = {
+  bar: string;
+};
+
+// good
+interface Foo {
+  bar: string;
+}
+```
+
+- [18.2](#18-2) any は禁止します。
+- [18.3](#18-3) キャストは `as` ではなく利用可能な限り `String` や `Number` を使いましょう。
+  > as string や as number をした場合、JavaScript ランタイム上では実は undefined である場合などが存在します。
+
+```ts
+// bad
+function foo(x) {
+  const b = x as string;
+}
+
+// good
+function foo(x) {
+  const b = String(x);
+}
 ```
