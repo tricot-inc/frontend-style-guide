@@ -304,7 +304,7 @@ function sayHi(name: string): string {
 
 ```ts
 // bad
-const foo = '\'this\' is "quoted"';
+const foo = '\'this\' \i\s \"quoted\"'; // prettier-ignore
 
 // good
 const foo = '\'this\' is "quoted"';
