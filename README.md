@@ -109,13 +109,13 @@ const good = {
 
 ```ts
 // bad
-const original = { a: 1, b: 2 };
-const copy = Object.assign(original, { c: 3 });
+const original = {a: 1, b: 2};
+const copy = Object.assign(original, {c: 3});
 delete copy.a; // copy から a が消えてしまう
 
 // good
-const original = { a: 1, b: 2 };
-const copy = {...original, { c:3 }};
+const original = {a: 1, b: 2};
+const copy = {...original, c: 3};
 const {a, ...noA} = copy; // noA => {b: 2, c:3}
 ```
 
