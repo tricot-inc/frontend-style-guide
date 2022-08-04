@@ -94,7 +94,7 @@ const obj = {
 ```ts
 // bad
 const bad = {
-  foo: 1,
+  'foo': 1, // prettier-ignore
   'data-foo': 2,
 };
 
